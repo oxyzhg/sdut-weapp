@@ -1,3 +1,5 @@
+const zanui = require('/dist/index');
+
 App({
   onLaunch() {
     this.getWxInfo();
@@ -32,6 +34,8 @@ App({
       mask
     });
   },
+  /* ZanUI组件 */
+  zanui,
   globalData: {
     collegeList: [
       '机械工程学院',

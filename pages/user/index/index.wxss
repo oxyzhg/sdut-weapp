@@ -14,7 +14,7 @@
   margin: 20rpx;
   padding-left: 30rpx;
   border-radius: 10rpx;
-  box-shadow: 0 3px 1px #eee;
+  box-shadow: 0 2px 1px #eee;
   background: #fff;
 }
 
@@ -66,4 +66,21 @@
   height: 36px;
   border-radius: 100% 0 0 100%/50%;
   background-color: #008aff;
+}
+
+/* weui更改样式 */
+
+.page__bd {
+  padding: 48rpx 0;
+}
+
+.weui-cell__icon {
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.weui-cells_after-title {
+  margin-bottom: 48rpx;
 }

@@ -2,7 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/feature/index/index",
-    "pages/user/index/index"
+    "pages/user/index/index",
+    "pages/user/bind/bind",
+    "pages/user/info/info",
+    "pages/user/feedback/feedback",
+    "pages/user/about/about"
   ],
   "window": {
     "navigationBarBackgroundColor": "#008aff",
@@ -21,8 +25,8 @@
       {
         "pagePath": "pages/index/index",
         "text": "Home",
-        "iconPath": "images/tab/icon_index.png",
-        "selectedIconPath": "images/tab/icon_index_on.png"
+        "iconPath": "images/tab/icon_home.png",
+        "selectedIconPath": "images/tab/icon_home_on.png"
       },
       {
         "pagePath": "pages/feature/index/index",

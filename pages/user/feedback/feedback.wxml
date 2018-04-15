@@ -1,0 +1,27 @@
+<import src="/dist/field/index.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">反馈信息</view>
+    <view class="page__desc">把你的想法反馈给我们</view>
+  </view>
+  <view class="page__bd">
+    <!-- <template is="zan-field" data="{{ title: '姓名', placeholder: '请输入你的姓名', value }}"></template>
+    <template is="zan-field" data="{{ title: '学号', placeholder: '请输入你的学号', value }}"></template>
+    <template is="zan-field" data="{{ title: '内容', placeholder: '请输入你的反馈', type: 'textarea', value }}"></template> -->
+
+    <view class="zan-panel-title">基本信息</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.name, value: value }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdutId, value: value }}"></template>
+    </view>
+    <view class="zan-panel-title">反馈内容</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.feedback, value: info.feedback }}"></template>
+    </view>
+
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="clearInput">清除输入</button>
+    </view>
+  </view>
+</view>

@@ -1,4 +1,4 @@
-// pages/feature/index/index.js
+const app = getApp();
 Page({
 
   /**
@@ -111,7 +111,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    setTimeout(() => {
+      app.showToast('刷新成功', 'success', 1000)
+      wx.stopPullDownRefresh()
+    }, 1000)
   },
 
   /**

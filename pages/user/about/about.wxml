@@ -1,0 +1,9 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">关于我们</view>
+    <view class="page__desc">关于我们的描述</view>
+  </view>
+  <view class="page__bd">
+    
+  </view>
+</view>

@@ -13,10 +13,10 @@ loading, navigator, audio, image, video, map, canvas {
 }
 
 page {
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   font-size: 16px;
   font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
-  background: url(https://wx.youthol.cn/static/images/sdut_lib.png) no-repeat;
+  background: #f8f8f8 url(https://wx.youthol.cn/static/images/sdut_lib.png) no-repeat;
   background-size: 100%;
   background-position: 0px 100%;
 }
