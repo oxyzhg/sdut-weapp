@@ -1,0 +1,29 @@
+<view class="page">
+  <!-- page hd -->
+  <view class="page__hd">
+    <view class="page__title">学生服务</view>
+    <view class="page__desc">山东理工大学学生服务</view>
+  </view>
+
+  <!-- page bd -->
+  <view class="page__bd">
+    <view class="weui-grids">
+      <block wx:for="{{ features }}" wx:key="*this">
+        <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+          <image class="weui-grid__icon" src="{{ item.iconPath }}" />
+          <view class="weui-grid__label">{{ item.name }}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+
+  <!-- page ft -->
+  <!-- <view class="page__ft">
+    <view class="weui-footer">
+      <view class="weui-footer__links">
+        <navigator url="" class="weui-footer__link">青春实验室</navigator>
+      </view>
+      <view class="weui-footer__text">Copyright © SDUT</view>
+    </view>
+  </view> -->
+</view>

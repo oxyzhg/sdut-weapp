@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/feature/index/index",
+    "pages/user/user"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#008aff",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "山东理工大学",
+    "backgroundColor": "#008aff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#008aff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Home",
+        "iconPath": "images/tab/icon_index.png",
+        "selectedIconPath": "images/tab/icon_index_on.png"
+      },
+      {
+        "pagePath": "pages/feature/index/index",
+        "text": "Feature",
+        "iconPath": "images/tab/icon_feature.png",
+        "selectedIconPath": "images/tab/icon_feature_on.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "Me",
+        "iconPath": "images/tab/icon_user.png",
+        "selectedIconPath": "images/tab/icon_user_on.png"
+      }
+    ]
+  },
+  "debug": true
+}
