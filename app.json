@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/feature/index/index",
-    "pages/user/user"
+    "pages/user/index/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#008aff",
@@ -31,7 +31,7 @@
         "selectedIconPath": "images/tab/icon_feature_on.png"
       },
       {
-        "pagePath": "pages/user/user",
+        "pagePath": "pages/user/index/index",
         "text": "Me",
         "iconPath": "images/tab/icon_user.png",
         "selectedIconPath": "images/tab/icon_user_on.png"
