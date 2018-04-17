@@ -1,4 +1,4 @@
-// pages/user/info/info.js
+// pages/feature/jidian/result/result.js
 Page({
 
   /**

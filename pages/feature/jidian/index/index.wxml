@@ -1,0 +1,19 @@
+<import src="/dist/field/index.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">绩点查询</view>
+    <view class="page__desc">学生服务丨绩点查询</view>
+  </view>
+  <view class="page__bd">
+    <view class="zan-panel-title">查询信息</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.name, value: fillData.userName }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdutId, value: fillData.sdutId }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">确认提交</button>
+      <button class="zan-btn" bindtap="clearInput">清除输入</button>
+    </view>
+  </view>
+</view>

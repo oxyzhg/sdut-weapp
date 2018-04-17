@@ -1,0 +1,24 @@
+<view class="page">
+  <!-- <view class="page__hd">
+    <view class="page__title">反馈信息</view>
+    <view class="page__desc">把你的想法反馈给我们</view>
+  </view> -->
+  <view class="page__bd">
+    <view class="zan-panel-title">常见问题</view>
+    <view class="zan-panel">
+      <block wx:for="{{ faqs }}" wx:key="index">
+        <view class="collapse-item">
+          <view class="collapse__hd {{activeId == index ? 'collapse-arrow-up' : 'collapse-arrow-down'}}" bindtap="showCollapse" data-param="{{ index }}">
+            <text>{{ item.title }}</text>
+          </view>
+          <view class="collapse__bd" wx:if="{{ activeId == index }}">
+            {{ item.content }}
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="toFeedbackPage">我要反馈</button>
+    </view>
+  </view>
+</view>

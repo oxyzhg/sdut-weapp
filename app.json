@@ -2,10 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/feature/index/index",
+    "pages/feature/jidian/index/index",
+    "pages/feature/jidian/result/result",
     "pages/user/index/index",
     "pages/user/bind/bind",
-    "pages/user/info/info",
-    "pages/user/feedback/feedback",
+    "pages/user/feedback/index/index",
+    "pages/user/feedback/input/input",
     "pages/user/about/about"
   ],
   "window": {

@@ -1,2 +1,26 @@
-<!--pages/user/bind/bind.wxml-->
-<text>pages/user/bind/bind.wxml</text>
+<import src="/dist/field/index.wxml" />
+
+<view class="page">
+  <view class="page__bd">
+    <view class="zan-panel-title">基本信息</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.name, disabled, value: fillData.userName }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdutId, disabled, value: fillData.sdutId }}"></template>
+      <view class="zan-cell zan-field">
+        <view class="zan-cell__hd zan-field__title">学院</view>
+        <picker mode="selector" class="zan-field__input zan-cell__bd" disabled="{{ disabled }}" range="{{ collegeList }}" value="{{ collegeIndex }}" bindchange="onCollegeChange">
+          {{ collegeList[collegeIndex] }}
+        </picker>
+      </view>
+      <template is="zan-field" data="{{ ...inputField.specialty, disabled, value: fillData.specialty }}"></template>
+      <template is="zan-field" data="{{ ...inputField.className, disabled, value: fillData.className }}"></template>
+      <template is="zan-field" data="{{ ...inputField.apartment, disabled, value: fillData.apartment }}"></template>
+      <template is="zan-field" data="{{ ...inputField.roomNum, disabled, value: fillData.roomNum }}"></template>
+      <template is="zan-field" data="{{ ...inputField.phoneNum, disabled, value: fillData.phoneNum }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn" bindtap="changeEditStatus">编辑</button>
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">提交</button>
+    </view>
+  </view>
+</view>

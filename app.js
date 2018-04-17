@@ -26,7 +26,7 @@ App({
       }
     });
   },
-  showToast(title = '加载中', icon = 'loading', duration = 2000, mask = true) {
+  showToast(title = '加载中', icon = 'none', duration = 2000, mask = true) {
     wx.showToast({
       title,
       icon,
@@ -37,7 +37,9 @@ App({
   /* ZanUI组件 */
   zanui,
   globalData: {
+    baseUrl: 'https://wx.youthol.cn/api',
     collegeList: [
+      '选择学院',
       '机械工程学院',
       '交通与车辆工程学院',
       '农业工程与食品科学学院',

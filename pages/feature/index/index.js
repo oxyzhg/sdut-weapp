@@ -5,13 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    features: [
+    featureList: [
       {
         id: 1,
         name: '绩点查询',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/jidian/index/index'
       },
       {
         id: 2,

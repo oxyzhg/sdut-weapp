@@ -1,0 +1,75 @@
+/* 自定义ZanUI */
+
+.zan-btns {
+  margin-top: 100rpx;
+}
+
+/* 自定义折叠面板样式 */
+
+.collapse-content {
+  overflow: hidden;
+}
+
+.collapse-item {
+  width: 100%;
+  padding: 10rpx 20rpx;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.collapse__hd {
+  width: 100%;
+  line-height: 2em;
+  color: #333;
+  font-size: 16px;
+}
+
+.collapse__bd {
+  padding-left: 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.collapse-arrow-up {
+  padding-right: 13px;
+  position: relative;
+}
+
+.collapse-arrow-down {
+  padding-right: 13px;
+  position: relative;
+}
+
+.collapse-arrow-up::after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, -.71, 0.71, 0.71, 0, 0);
+  transform: matrix(0.71, -.71, 0.71, 0.71, 0, 0);
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.collapse-arrow-down::after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8cd;
+  border-style: solid;
+  -webkit-transform: matrix(-.71, 0.71, -.71, -.71, 0, 0);
+  transform: matrix(-.71, 0.71, -.71, -.71, 0, 0);
+  top: -2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}

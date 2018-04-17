@@ -8,15 +8,15 @@
   <view class="page__bd">
     <view class="zan-panel-title">基本信息</view>
     <view class="zan-panel">
-      <template is="zan-field" data="{{ ...inputField.name, value: userName }}"></template>
-      <template is="zan-field" data="{{ ...inputField.sdutId, value: sdutId }}"></template>
+      <template is="zan-field" data="{{ ...inputField.name, value: fillData.userName }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdutId, value: fillData.sdutId }}"></template>
     </view>
     <view class="zan-panel-title">反馈内容</view>
     <view class="zan-panel">
-      <template is="zan-field" data="{{ ...inputField.feedback, value: feedbackContent }}"></template>
+      <template is="zan-field" data="{{ ...inputField.feedback, value: fillData.feedbackContent }}"></template>
     </view>
     <view class="zan-btns">
-      <button class="zan-btn zan-btn--primary" bindtap="clearInput">确认提交</button>
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">确认提交</button>
       <button class="zan-btn" bindtap="clearInput">清除输入</button>
     </view>
   </view>

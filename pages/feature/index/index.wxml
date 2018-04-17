@@ -8,8 +8,8 @@
   <!-- page bd -->
   <view class="page__bd">
     <view class="weui-grids">
-      <block wx:for="{{ features }}" wx:key="*this">
-        <navigator url="" class="weui-grid" hover-class="weui-grid_active">
+      <block wx:for="{{ featureList }}" wx:key="*this">
+        <navigator url="{{ item.navigateUrl }}" class="weui-grid" hover-class="weui-grid_active">
           <image class="weui-grid__icon" src="{{ item.iconPath }}" />
           <view class="weui-grid__label">{{ item.name }}</view>
         </navigator>
