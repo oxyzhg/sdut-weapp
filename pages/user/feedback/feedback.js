@@ -12,32 +12,32 @@ Page(extend({}, Field, {
         focus: true,
         title: '姓名',
         placeholder: '请输入你的姓名',
-        componentId: 1
+        componentId: 'userName'
       },
       sdutId: {
         // error: true,
         title: '学号',
         inputType: 'number',
         placeholder: '请输入你的学号',
-        componentId: 2
+        componentId: 'sdutId'
       },
       feedback: {
         // title: '反馈',
         type: 'textarea',
         placeholder: '请输入你的反馈信息',
-        componentId: 3  
+        componentId: 'feedbackContent'
       }
     },
-    info: {
-      name: '',
-      sdutId: '',
-      feedback: ''
-    },
-    value: '测试'
+    userName: '',
+    sdutId: '',
+    feedbackContent: ''
   },
-  handleZanFieldChange(e) {},
+  handleZanFieldChange(e) { },
   handleZanFieldBlur(e) {
-    console.log(e, this.data)
+    const { componentId, detail } = e;
+    this.setData({
+      [componentId]: detail.value
+    })
     /*
      * componentId 即为在模板中传入的 componentId
      * 用于在一个页面上使用多个 tab 时，进行区分
@@ -49,7 +49,9 @@ Page(extend({}, Field, {
   },
   clearInput() {
     this.setData({
-      value: ''
+      userName: '',
+      sdutId: '',
+      feedbackContent: ''
     });
   },
 
