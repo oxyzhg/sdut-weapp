@@ -1,0 +1,49 @@
+<import src="/dist/field/index.wxml" />
+<import src="/dist/toast/index.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">综测排名查询</view>
+    <view class="page__desc">学生服务丨综测排名查询</view>
+  </view>
+  <view class="page__bd" wx:if="{{ !showResult }}">
+    <view class="zan-panel-title">用户信息</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.sdut_name, value: fillData.sdut_name }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdut_id, value: fillData.sdut_id }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">确认提交</button>
+      <button class="zan-btn" bindtap="clearInput">清除输入</button>
+    </view>
+  </view>
+  <view class="page__bd" wx:else>
+    <block wx:for="{{ [1,2,3,4] }}" wx:key="index">
+      <view class="zan-panel-title">2019-2020-1</view>
+      <view class="zan-panel">
+        <view class="zan-cell">
+          <view class="zan-cell__bd">智育成绩班级名次</view>
+          <view class="zan-cell__ft">5/31</view>
+        </view>
+        <view class="zan-cell">
+          <view class="zan-cell__bd">智育成绩年级名次</view>
+          <view class="zan-cell__ft">16/127</view>
+        </view>
+        <view class="zan-cell">
+          <view class="zan-cell__bd">综测成绩班级名次</view>
+          <view class="zan-cell__ft">8/31</view>
+        </view>
+        <view class="zan-cell">
+          <view class="zan-cell__bd">综测成绩年级名次</view>
+          <view class="zan-cell__ft">29/127</view>
+        </view>
+        <view class="zan-cell">
+          <view class="zan-cell__bd">不及格门数</view>
+          <view class="zan-cell__ft">0</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<template is="zan-toast" data="{{ zanToast }}"></template>

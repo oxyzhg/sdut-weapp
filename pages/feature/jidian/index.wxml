@@ -1,0 +1,66 @@
+<import src="/dist/field/index.wxml" />
+<import src="/dist/toast/index.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">绩点查询</view>
+    <view class="page__desc">学生服务丨绩点查询</view>
+  </view>
+  <view class="page__bd" wx:if="{{ !showResult }}">
+    <view class="zan-panel-title">用户信息</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.sdut_name, value: fillData.sdut_name }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdut_id, value: fillData.sdut_id }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">确认提交</button>
+      <button class="zan-btn" bindtap="clearInput">清除输入</button>
+    </view>
+  </view>
+  <view class="page__bd" wx:else>
+    <view class="zan-panel-title">学生信息</view>
+    <view class="zan-panel">
+      <view class="zan-cell">
+        <view class="zan-cell__bd">学号</view>
+        <view class="zan-cell__ft">15110302127</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">姓名</view>
+        <view class="zan-cell__ft">张强</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">性别</view>
+        <view class="zan-cell__ft">男</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">专业</view>
+        <view class="zan-cell__ft">食品科学与工程</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">班级</view>
+        <view class="zan-cell__ft">食品1504</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">层次</view>
+        <view class="zan-cell__ft">本科</view>
+      </view>
+    </view>
+    <view class="zan-panel-title">主修专业信息</view>
+    <view class="zan-panel">
+      <view class="zan-cell">
+        <view class="zan-cell__bd">绩点</view>
+        <view class="zan-cell__ft strong">85.647</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">已修/应修学分</view>
+        <view class="zan-cell__ft">109.5/109.5</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">公选课学分</view>
+        <view class="zan-cell__ft">18</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<template is="zan-toast" data="{{ zanToast }}"></template>

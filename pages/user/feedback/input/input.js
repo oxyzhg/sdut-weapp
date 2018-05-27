@@ -4,17 +4,17 @@ const { Field, extend } = app.zanui;
 Page(extend({}, Field, {
   data: {
     inputField: {
-      name: {
+      sdut_name: {
         focus: true,
         title: '姓名',
         placeholder: '请输入你的姓名',
-        componentId: 'userName'
+        componentId: 'sdut_name'
       },
-      sdutId: {
+      sdut_id: {
         title: '学号',
         inputType: 'number',
         placeholder: '请输入你的学号',
-        componentId: 'sdutId'
+        componentId: 'sdut_id'
       },
       feedback: {
         type: 'textarea',
@@ -23,29 +23,29 @@ Page(extend({}, Field, {
       }
     },
     fillData: {
-      userName: '',
-      sdutId: '',
+      sdut_name: '',
+      sdut_id: '',
       feedbackContent: ''
     },
   },
   handleZanFieldChange(e) { },
-  handleZanFieldBlur(e) {
-    let { componentId, detail } = e;
-    let { fillData } = this.data;
-    fillData[componentId] = detail.value;
-    this.setData({ fillData });
+  handleZanFieldBlur({ componentId, detail }) {
+    this.setData({
+      [`fillData.${componentId}`]: detail.value
+    });
   },
   clearInput() {
     this.setData({
       fillData: {
-        userName: '',
-        sdutId: '',
+        sdut_name: '',
+        sdut_id: '',
         feedbackContent: ''
       }
     });
   },
   onSubmit() {
     const { fillData } = this.data;
+    console.log(fillData)
     wx.request({
       url: `${app.globalData.baseUrl}`,
       method: 'POST',
@@ -59,7 +59,7 @@ Page(extend({}, Field, {
             url: '/pages/user/index/index',
           })
         } else {
-          app.showToast(`请求出错：${res.statusCode}`); 
+          app.showToast(`请求出错：${res.statusCode}`);
         }
       },
       fail: (err) => {

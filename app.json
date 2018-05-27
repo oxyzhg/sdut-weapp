@@ -2,8 +2,14 @@
   "pages": [
     "pages/index/index",
     "pages/feature/index/index",
-    "pages/feature/jidian/index/index",
-    "pages/feature/jidian/result/result",
+    "pages/feature/jidian/index",
+    "pages/feature/chengji/index",
+    "pages/feature/zongce/index",
+    "pages/feature/exam/index",
+    "pages/feature/rongyu/index",
+    "pages/feature/weisheng/index",
+    "pages/feature/dianfei/index",
+    "pages/feature/calendar/index",
     "pages/user/index/index",
     "pages/user/bind/bind",
     "pages/user/feedback/index/index",
@@ -16,7 +22,7 @@
     "navigationBarTitleText": "山东理工大学",
     "backgroundColor": "#008aff",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#cdcdcd",

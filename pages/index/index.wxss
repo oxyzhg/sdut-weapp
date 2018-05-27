@@ -1,21 +1,171 @@
-/**index.wxss**/
-.userinfo {
+/* 顶部导航图标 */
+
+.page_navbar {
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 750rpx;
+  padding: 10rpx 0;
+  background: #008aff;
+}
+
+.nav_item {
+  width: 180rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+
+.nav_item_icon {
+  width: 100rpx;
+  margin: 0 auto;
+}
+
+.nav_item_text {
+  color: #fff;
+  font-size: 13px;
+}
+
+/* 应用通知 */
+
+.page_notice {
+  margin: 10rpx 0;
+}
+
+swiper {
+  height: 160rpx;
+}
+
+.slide-image {
+  width: 750rpx;
+  height: 160rpx;
+}
+
+/* 功能卡片 */
+
+.page_card {
+  width: 750rpx;
+  margin: 0;
+  padding: 20rpx 0;
+}
+
+.card_item {
+  margin-bottom: 20rpx;
+  background: #fff;
+  /* box-shadow: 0 6rpx 8rpx #eee; */
+}
+
+.card_item__hd {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 10rpx 20rpx;
+  line-height: 2em;
+  font-size: 14px;
+  color: #1c2438;
+}
+
+.card-title {
+  position: relative;
+  padding-left: 20rpx;
+}
+
+.card-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8rpx;
+  height: 1em;
+  background: #008aff;
+  border-radius: 5rpx;
+}
+
+.card_item__bd {
+  padding: 20rpx;
+}
+
+.card_item__ft {
+ padding: 30rpx;
+  text-align: center;
+}
+
+/* 课表模块 */
+
+.xskcb-cell {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.xskcb-cell__hd {
+  width: 200rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 100%;
+  font-size: 50rpx;
+  font-weight: 700;
+}
+
+.xskcb-cell__bd {
+  width: 575rpx;
+  padding-left: 20rpx;
+  line-height: 1em;
+  border-left: 4rpx solid #ff7500;
+}
+
+.xskcb-date {
+  color: #1c2438;
+}
+
+.xskcb-name {
+  margin-bottom: 20rpx;
+}
+
+.xskcb-locat {
+  color: #80848f;
+  font-size: 12px;
+  line-height: 1em;
+}
+
+/* 一卡通模块 */
+
+.ecard-cell, .elec-cell {
+  display: flex;
+  flex-flow: row nowrap;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.ecard-cell__hd, .elec-cell__hd {
+  width: 300rpx;
+  text-align: center;
+  font-size: 25px;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.ecard-remain-num, .elec-remain-num {
+  color: #00e500;
 }
 
-.usermotto {
-  margin-top: 200px;
+.ecard-remain-sub, .elec-remain-sub {
+  font-size: 13px;
+  color: #1c2438;
+}
+
+.ecard-last-locat, .ecard-last-date {
+  color: #80848f;
+  font-size: 13px;
+}
+
+/* 电费模块 */
+
+.elex-cell__bd {
+  width: 375rpx;
+}
+
+.elec-text {
+  line-height: 1.5em;
+  color: #1c2438;
+  font-size: 14px;
 }

@@ -4,23 +4,29 @@
   <view class="page__bd">
     <view class="zan-panel-title">基本信息</view>
     <view class="zan-panel">
-      <template is="zan-field" data="{{ ...inputField.name, disabled, value: fillData.userName }}"></template>
-      <template is="zan-field" data="{{ ...inputField.sdutId, disabled, value: fillData.sdutId }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdut_name, disabled, value: fillData.sdut_name }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdut_id, disabled, value: fillData.sdut_id }}"></template>
       <view class="zan-cell zan-field">
         <view class="zan-cell__hd zan-field__title">学院</view>
-        <picker mode="selector" class="zan-field__input zan-cell__bd" disabled="{{ disabled }}" range="{{ collegeList }}" value="{{ collegeIndex }}" bindchange="onCollegeChange">
-          {{ collegeList[collegeIndex] }}
+        <picker mode="selector" class="zan-field__input zan-cell__bd" disabled="{{ disabled }}" range="{{ academyList }}" range-key="name" value="{{ academyIndex }}" bindchange="handlePicker">
+          {{ academyList[academyIndex].name }}
         </picker>
       </view>
-      <template is="zan-field" data="{{ ...inputField.specialty, disabled, value: fillData.specialty }}"></template>
-      <template is="zan-field" data="{{ ...inputField.className, disabled, value: fillData.className }}"></template>
-      <template is="zan-field" data="{{ ...inputField.apartment, disabled, value: fillData.apartment }}"></template>
-      <template is="zan-field" data="{{ ...inputField.roomNum, disabled, value: fillData.roomNum }}"></template>
-      <template is="zan-field" data="{{ ...inputField.phoneNum, disabled, value: fillData.phoneNum }}"></template>
+      <template is="zan-field" data="{{ ...inputField.major, disabled, value: fillData.major }}"></template>
+      <template is="zan-field" data="{{ ...inputField.class_name, disabled, value: fillData.class_name }}"></template>
+      <view class="zan-cell zan-field">
+        <view class="zan-cell__hd zan-field__title">宿舍楼</view>
+        <picker mode="selector" class="zan-field__input zan-cell__bd" disabled="{{ disabled }}" range="{{ dormList }}" range-key="description" value="{{ dormIndex }}" bindchange="handleDormPicker">
+          {{ dormList[dormIndex].description }}
+        </picker>
+      </view>
+      <!-- <template is="zan-field" data="{{ ...inputField.dormitory, disabled, value: fillData.dormitory }}"></template> -->
+      <template is="zan-field" data="{{ ...inputField.room, disabled, value: fillData.room }}"></template>
+      <template is="zan-field" data="{{ ...inputField.phone, disabled, value: fillData.phone }}"></template>
     </view>
     <view class="zan-btns">
       <button class="zan-btn" bindtap="changeEditStatus">编辑</button>
-      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">提交</button>
+      <button class="zan-btn zan-btn--primary" bindtap="handleSubmit">提交</button>
     </view>
   </view>
 </view>

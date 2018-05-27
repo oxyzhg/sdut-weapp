@@ -10,23 +10,14 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  width: 710rpx;
   height: 260rpx;
-  margin: 20rpx;
+  margin: 20rpx auto;
   padding-left: 30rpx;
   border-radius: 10rpx;
   box-shadow: 0 2px 1px #eee;
   background: #fff;
-}
-
-.user-info-card::before {
-  content: '';
-  position: absolute;
-  top: -20rpx;
-  left: -20rpx;
-  width: 750rpx;
-  height: 150rpx;
-  background: #008aff;
-  z-index: -1;
+  z-index: 1;
 }
 
 .user-avatar {
@@ -57,7 +48,17 @@
   background-color: #008aff;
 }
 
-.user-gobind::before {
+.user-info-card-mask {
+  width: 750rpx;
+  height: 150rpx;
+  position: absolute;
+  top: -20rpx;
+  left: 0;
+  background: #008aff;
+  z-index: 0;
+}
+
+ .user-gobind::before {
   content: '';
   position: absolute;
   top: 0;
@@ -66,7 +67,7 @@
   height: 36px;
   border-radius: 100% 0 0 100%/50%;
   background-color: #008aff;
-}
+} 
 
 /* weui更改样式 */
 

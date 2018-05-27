@@ -1,0 +1,50 @@
+<import src="/dist/field/index.wxml" />
+<import src="/dist/select/index.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">宿舍卫生查询</view>
+    <view class="page__desc">学生服务丨宿舍卫生成绩查询</view>
+  </view>
+  <view class="page__bd" wx:if="{{ !showResult }}">
+    <view class="zan-panel-title">选择校区</view>
+    <view class="zan-panel">
+      <view>
+        <template is="zan-select" data="{{ items:schoolList, checkedValue: fillData.school, activeColor, componentId: 'school' }}"></template>
+      </view>
+    </view>
+    <view class="zan-panel-title">选择宿舍楼</view>
+    <view class="zan-panel">
+      <view class="zan-cell zan-field">
+        <view class="zan-cell__hd zan-field__title">楼宇号</view>
+        <picker mode="selector" class="zan-field__input zan-cell__bd" range="{{ dormList }}" range-key="name" bindchange="handlePicker" value="{{ dormIndex }}">
+          {{ dormList[dormIndex].name }}
+        </picker>
+      </view>
+    </view>
+    <view class="zan-panel-title">房间号</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.room, value: fillData.room }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">确认提交</button>
+      <button class="zan-btn" bindtap="clearInput">清除输入</button>
+    </view>
+  </view>
+  <view class="page__bd" wx:else>
+    <view class="zan-panel-title">本学期卫生成绩</view>
+    <view class="zan-panel">
+      <block wx:for="{{ [1,2,3,4] }}" wx:key="index">
+        <view class="zan-cell">
+          <view class="zan-cell__bd">
+            <view class="zan-cell__text">第{{index}}周</view>
+            <view class="zan-cell__desc">2018-05-10</view>
+          </view>
+          <view class="zan-cell__ft">
+            <view class="zan-tag zan-tag--primary">96</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

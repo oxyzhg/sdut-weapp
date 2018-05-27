@@ -5,103 +5,140 @@ Page(extend({}, Field, {
   data: {
     disabled: true,
     inputField: {
-      name: {
+      sdut_name: {
         title: '姓名',
         placeholder: '请输入你的姓名',
         componentId: 'userName'
       },
-      sdutId: {
+      sdut_id: {
         title: '学号',
         inputType: 'number',
         placeholder: '请输入你的学号',
         componentId: 'sdutId'
       },
-      college: {
+      academy: {
         title: '学院',
         placeholder: '请选择你的学院',
-        componentId: 'college'
+        componentId: 'academy'
       },
-      specialty: {
+      major: {
         title: '专业',
         placeholder: '请输入你的专业',
-        componentId: 'specialty'
+        componentId: 'major'
       },
-      className: {
+      class_name: {
         title: '班级',
         placeholder: '请输入你的学院',
-        componentId: 'className'
+        componentId: 'class_name'
       },
-      apartment: {
+      dormitory: {
         title: '宿舍楼',
         placeholder: '请输入你的学院',
-        componentId: 'apartment'
+        componentId: 'dormitory'
       },
-      roomNum: {
+      room: {
         title: '房间号',
         inputType: 'number',
         placeholder: '请输入你的学院',
-        componentId: 'roomNum'
+        componentId: 'room'
       },
-      phoneNum: {
+      phone: {
         title: '手机号',
         inputType: 'number',
         placeholder: '请输入你的手机号',
-        componentId: 'phoneNum'
+        componentId: 'phone'
       },
     },
-    fillData: {
-      userName: '张强',
-      sdutId: '15110302127',
-      college: '农业工程与食品科学学院',
-      specialty: '食品科学与工程',
-      className: '食品1504',
-      apartment: '13#南',
-      roomNum: '1308',
-      phoneNum: '17864305305',
-    },
-    collegeList: app.globalData.collegeList,
-    collegeIndex: 0,
+    fillData: {},
+    academyList: [],
+    academyIndex: 0,
+    dormList: [],
+    dormIndex: 0,
   },
   onLoad: function (options) {
-    // 加载时候从缓存中获取用户信息，如果没有则提示绑定
+    // app.getUserInfo();
+    // 从缓存中获取用户信息，如果没有则提示绑定
     let fillData = wx.getStorageSync('userInfo');
-    // 根据绑定的信息，设置学院索引
-    let collegeIndex = app.globalData.collegeList.indexOf(this.data.fillData.college);
+    // 从缓存中获取学院列表，并设置索引值
+    let academyList = wx.getStorageSync('academyList');
+    let academyIndex = academyList.findIndex(v => v.id == fillData.academy);
+    // 从缓存中获取宿舍楼列表，并设置索引值
+    let dormList = wx.getStorageSync('dormList');
+    let dormIndex = dormList.findIndex(v => v.id == fillData.dormitory);
     // 数据更新到data
-    this.setData({ collegeIndex });
+    this.setData({
+      fillData,
+      academyList,
+      academyIndex,
+      dormList,
+      dormIndex
+    });
+  },
+  onShow() {
+    const isBind = wx.getStorageSync('isBind');
+    if (isBind) {
+      let userInfo = wx.getStorageSync('userInfo');
+      this.setData({ userInfo, isBind });
+    } else {
+      wx.switchTab({
+        url: '/pages/user/index/index',
+      });
+    }
   },
   handleZanFieldChange(e) { },
-  handleZanFieldBlur(e) {
-    let { componentId, detail } = e;
-    let { fillData } = this.data;
-    fillData[componentId] = detail.value;
-    this.setData({ fillData });
+  handleZanFieldBlur({ componentId, detail }) {
+    this.setData({
+      [`fillData.${componentId}`]: detail.value
+    });
   },
-  onCollegeChange(e) {
-    let collegeIndex = e.detail.value;
-    this.setData({ collegeIndex });
+  handlePicker(e) {
+    let academyIndex = e.detail.value;
+    let academy = this.data.academyList[academyIndex].id;
+    this.setData({
+      [`fillData.academy`]: academy,
+      academyIndex
+    });
+  },
+  handleDormPicker(e) {
+    let dormIndex = e.detail.value;
+    let dormitory = this.data.dormList[dormIndex].id;
+    this.setData({
+      [`fillData.dormitory`]: dormitory,
+      dormIndex
+    });
   },
   changeEditStatus() {
     this.setData({
       disabled: !this.data.disabled
     });
+    if (!this.data.disabled) {
+      app.showToast('表单可编辑~');
+    } else {
+      app.showToast('表单已锁定~');
+    }
   },
-  onSubmit() {
+  handleSubmit() {
     const { fillData } = this.data;
+    const access_token = wx.getStorageSync('access_token');
+    console.log(fillData)
     wx.request({
-      url: `${app.globalData.baseUrl}`,
-      method: 'POST',
+      url: `${app.globalData.baseUrl}/user`,
+      method: 'PUT',
+      header: {
+        'Authorization': `Bearer ${access_token}`
+      },
       data: {
-        fillData
+        ...fillData
       },
       success: (res) => {
         if (res.statusCode == 200) {
           app.showToast('数据提交成功');
+          app.getUserInfo();
           wx.redirectTo({
             url: '/pages/user/index/index',
           })
         } else {
-          app.showToast(`数据提交出错：${res.statusCode}`); 
+          app.showToast(`数据提交出错：${res.statusCode}`);
         }
       },
       fail: (err) => {

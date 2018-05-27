@@ -1,6 +1,106 @@
 <view class="page">
-  <view class="page__hd">
-    <view class="page__title">你好，{{ userInfo.nickName }}</view>
-    <view class="page__desc">山东理工大学官方微信小程序</view>
+  <view class="page_navbar">
+    <navigator url="/pages/feature/jidian/index">
+      <view class="nav_item">
+        <image class="nav_item_icon" src="/images/tab/icon_feature.png" mode="widthFix"></image>
+        <view class="nav_item_text">绩点查询</view>
+      </view>
+    </navigator>
+    <navigator url="/pages/feature/jidian/index">
+      <view class="nav_item">
+        <image class="nav_item_icon" src="/images/tab/icon_feature.png" mode="widthFix"></image>
+        <view class="nav_item_text">绩点查询</view>
+      </view>
+    </navigator>
+    <navigator url="/pages/feature/jidian/index">
+      <view class="nav_item">
+        <image class="nav_item_icon" src="/images/tab/icon_feature.png" mode="widthFix"></image>
+        <view class="nav_item_text">绩点查询</view>
+      </view>
+    </navigator>
+    <navigator url="/pages/feature/jidian/index">
+      <view class="nav_item">
+        <image class="nav_item_icon" src="/images/tab/icon_feature.png" mode="widthFix"></image>
+        <view class="nav_item_text">更多</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="page_notice">
+    <swiper indicator-dots autoplay circular interval="3000" duration="1000">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode="aspectFit" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="page_cards">
+    <view class="card_item">
+      <view class="card_item__hd">
+        <view class="card-title">学生课表</view>
+        <view class="card-icon">...</view>
+      </view>
+      <view class="card_item__bd" wx:if="{{isBind}}">
+        <view class="xskcb-cell">
+          <view class="xskcb-cell__hd">
+            <text class="xskcb-date">1-2</text>
+          </view>
+          <view class="xskcb-cell__bd">
+            <view class="xskcb-name">数据结构（A）</view>
+            <view class="xskcb-locat">教4205（西）</view>
+          </view>
+        </view>
+        <view class="xskcb-cell">
+          <view class="xskcb-cell__hd">
+            <text class="xskcb-date">3-4</text>
+          </view>
+          <view class="xskcb-cell__bd">
+            <view class="xskcb-name">数据结构（A）</view>
+            <view class="xskcb-locat">教4205（西）</view>
+          </view>
+        </view>
+      </view>
+      <view class="card_item__ft" wx:else><icon type="warn" size="18"/> 绑定学号可使用~</view>
+    </view>
+    <view class="card_item">
+      <view class="card_item__hd">
+        <view class="card-title">校园一卡通</view>
+        <view class="card-icon">...</view>
+      </view>
+      <view class="card_item__bd" wx:if="{{isBind}}">
+        <view class="ecard-cell">
+          <view class="ecard-cell__hd">
+            <view class="ecard-remain-num">75.08</view>
+            <view class="ecard-remain-sub">剩余金额</view>
+          </view>
+          <view class="ecard-cell__bd">
+            <view class="ecard-last-num">￥1.00</view>
+            <view class="ecard-last-locat">餐费支出-西校第三食堂</view>
+            <view class="ecard-last-date">2018-05-08 12:00:00</view>
+          </view>
+        </view>
+      </view>
+      <view class="card_item__ft" wx:else><icon type="warn" size="18"/> 绑定学号可使用~</view>
+    </view>
+    <view class="card_item">
+      <view class="card_item__hd">
+        <view class="card-title">寝室用电</view>
+        <view class="card-icon">...</view>
+      </view>
+      <view class="card_item__bd" wx:if="{{isBind}}">
+        <view class="elec-cell">
+          <view class="elec-cell__hd">
+            <view class="elec-remain-num">13.49</view>
+            <view class="elec-remain-sub"><icon type="success" size="14"/> 正常使用</view>
+          </view>
+          <view class="elec-cell__bd">
+            <view class="elec-text">5H506</view>
+            <view class="elec-text">2018-05-08 11:36</view>
+            <view class="elec-text">估计剩余4-5天啦~</view>
+          </view>
+        </view>
+      </view>
+      <view class="card_item__ft" wx:else><icon type="warn" size="18"/> 绑定学号可使用~</view>
+    </view>
   </view>
 </view>

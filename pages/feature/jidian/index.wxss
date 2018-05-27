@@ -1,0 +1,4 @@
+.strong {
+  color: #1aad16;
+  font-weight: 600;
+}

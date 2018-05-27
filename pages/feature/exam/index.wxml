@@ -1,0 +1,62 @@
+<import src="/dist/field/index.wxml" />
+<import src="/dist/toast/index.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">考试信息查询</view>
+    <view class="page__desc">学生服务丨考试时间地点查询</view>
+  </view>
+  <view class="page__bd" wx:if="{{ !showResult }}">
+    <view class="zan-panel-title">用户信息</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.sdut_name, value: fillData.sdut_name }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdut_id, value: fillData.sdut_id }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">确认提交</button>
+      <button class="zan-btn" bindtap="clearInput">清除输入</button>
+    </view>
+  </view>
+  <view class="page__bd" wx:else>
+    <view class="zan-panel">
+      <view class="zan-cell">
+        <view class="zan-cell__bd">姓名</view>
+        <view class="zan-cell__ft">张强</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">学号</view>
+        <view class="zan-cell__ft">15110302127</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">学院</view>
+        <view class="zan-cell__ft">农业工程与食品科学学院</view>
+      </view>
+      <view class="zan-cell">
+        <view class="zan-cell__bd">班级</view>
+        <view class="zan-cell__ft">食品1054</view>
+      </view>
+    </view>
+    <view class="zan-panel-title">考试信息（公选课）</view>
+    <view class="zan-panel">
+      <block wx:for="{{ [1,2,3,4] }}" wx:key="index">
+        <view class="zan-cell {{activeId == index ? 'arrow-up' : 'arrow-down'}}" bindtap="showCollapse" data-param="{{ index }}">
+          <view class="zan-cell__bd">
+            <view class="zan-cell__text">高等数学(A)I</view>
+            <view class="zan-cell__desc">2018-05-10 16:00-17:40</view>
+          </view>
+          <view class="zan-cell__ft">教4205（西）</view>
+        </view>
+        <view class="collapse__bd" wx:if="{{ activeId == index }}">
+          <view>考试座号：67</view>
+          <view>授课老师：04611/李涛/讲师</view>
+          <view>考试人数：82</view>
+          <view>监考学院：化工</view>
+          <view>监考人数：3</view>
+          <view>挂科率：14.25%</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<template is="zan-toast" data="{{ zanToast }}"></template>

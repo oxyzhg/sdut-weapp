@@ -11,64 +11,64 @@ Page({
         name: '绩点查询',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: '/pages/feature/jidian/index/index'
+        navigateUrl: '/pages/feature/jidian/index'
       },
       {
         id: 2,
         name: '成绩查询',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/chengji/index'
       },
       {
         id: 3,
         name: '综测查询',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/zongce/index'
       },
       {
         id: 4,
         name: '荣誉称号',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/rongyu/index'
       },
       {
         id: 5,
         name: '考试地点查询',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/exam/index'
       },
       {
         id: 6,
         name: '宿舍卫生查询',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/weisheng/index'
       },
       {
         id: 7,
         name: '用电查询',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/dianfei/index'
       },
       {
         id: 8,
         name: '校历',
         name_en: 'jidian',
         iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
+        navigateUrl: '/pages/feature/calendar/index'
       },
-      {
-        id: 9,
-        name: '失物招领',
-        name_en: 'jidian',
-        iconPath: '/images/tab/icon_feature.png',
-        navigateUrl: ''
-      }
+      // {
+      //   id: 9,
+      //   name: '失物招领',
+      //   name_en: 'jidian',
+      //   iconPath: '/images/tab/icon_feature.png',
+      //   navigateUrl: ''
+      // }
     ]
   },
 

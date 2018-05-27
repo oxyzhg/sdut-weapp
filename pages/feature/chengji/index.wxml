@@ -1,0 +1,62 @@
+<import src="/dist/field/index.wxml" />
+<import src="/dist/toast/index.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">成绩查询</view>
+    <view class="page__desc">学生服务丨成绩查询</view>
+  </view>
+  <view class="page__bd" wx:if="{{ !showResult }}">
+    <view class="zan-panel-title">用户信息</view>
+    <view class="zan-panel">
+      <template is="zan-field" data="{{ ...inputField.sdut_name, value: fillData.sdut_name }}"></template>
+      <template is="zan-field" data="{{ ...inputField.sdut_id, value: fillData.sdut_id }}"></template>
+    </view>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap="onSubmit">确认提交</button>
+      <button class="zan-btn" bindtap="clearInput">清除输入</button>
+    </view>
+  </view>
+  <view class="page__bd" wx:else>
+    <view class="zan-panel-title">2019-2020-1</view>
+    <view class="zan-panel">
+      <block wx:for="{{ [1,2,3,4] }}" wx:key="index">
+        <view class="zan-cell {{activeId == index ? 'arrow-up' : 'arrow-down'}}" bindtap="showCollapse" data-param="{{ index }}">
+          <view class="zan-cell__bd">高等数学(A)I</view>
+          <view class="zan-cell__ft">
+            <view class="zan-tag zan-tag--primary">91.9</view>
+          </view>
+        </view>
+        <view class="collapse__bd" wx:if="{{ activeId == index }}">
+          <view>课程学期：2019-2020-1</view>
+          <view>课程名称：高等数学(A)I</view>
+          <view>课程性质：必修课</view>
+          <view>课程学分：1.5</view>
+          <view>原考成绩：94</view>
+          <view>重考成绩：</view>
+        </view>
+      </block>
+    </view>
+    <view class="zan-panel-title">2017-2018-1</view>
+    <view class="zan-panel">
+      <block wx:for="{{ [1,2,3,4] }}" wx:key="index">
+        <view class="zan-cell {{activeId == index ? 'arrow-up' : 'arrow-down'}}" bindtap="showCollapse" data-param="{{ index }}">
+          <view class="zan-cell__bd">高等数学(A)I</view>
+          <view class="zan-cell__ft">
+            <view class="zan-tag zan-tag--primary">91.9</view>
+          </view>
+        </view>
+        <view class="collapse__bd" wx:if="{{ activeId == index }}">
+          <view>课程学期：2019-2020-1</view>
+          <view>课程名称：高等数学(A)I</view>
+          <view>课程性质：必修课</view>
+          <view>课程学分：1.5</view>
+          <view>原考成绩：94</view>
+          <view>重考成绩：</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<template is="zan-toast" data="{{ zanToast }}"></template>

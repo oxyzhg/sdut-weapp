@@ -1,0 +1,3 @@
+.collapse__bd {
+  padding: 20rpx 50rpx;
+}
